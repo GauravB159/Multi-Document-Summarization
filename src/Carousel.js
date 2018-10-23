@@ -18,9 +18,9 @@ export default class Carousel extends Component{
             return(
                 <Flickity className="collection" reloadOnUpdate={true}>
                 {
-                    this.state.data.map((d)=>{
+                    this.state.data.map((d,i)=>{
                         return(
-                            <div className="document">{d}</div>
+                            <div key={`document-${i}`} className="document">{d}</div>
                         )
                     })
                 }
@@ -34,13 +34,13 @@ export default class Carousel extends Component{
                         let concat = [];
                         d.forEach((sentence,j)=>{
                             if(this.props.selectedSentencesObject[`${i}-${j}`]){
-                                concat.push(<span className="red">{sentence}</span>)
+                                concat.push(<span key={`sentence-${j}`} className="red">{sentence}</span>)
                             }else{
                                 concat.push(sentence)
                             }
                         })
                         return (
-                            <div className="document">
+                            <div key={`document-${i}`} className="document">
                             {
                                 concat
                             }
@@ -54,13 +54,13 @@ export default class Carousel extends Component{
             return(
                 <Flickity className="collection" reloadOnUpdate={true}>
                 {
-                    this.state.data.map((d)=>{
+                    this.state.data.map((d,i)=>{
                         return(
-                            <div className="document">
+                            <div key={`document-${i}`} className="document">
                                 <ol>
-                                   {d.map((sent)=>{
+                                   {d.map((sent,j)=>{
                                        return(
-                                           <li>{sent}</li>
+                                           <li key={`list-${j}`}>{sent}</li>
                                        )
                                    })} 
                                 </ol>

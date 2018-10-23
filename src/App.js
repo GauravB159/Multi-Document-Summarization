@@ -60,7 +60,7 @@ class App extends Component {
             let contentWords = [];
             for (let j in words) {
                 const word = stemmer(words[j]);//stemming
-                if (word!=""){//not a stopword
+                if (word!==""){//not a stopword
                     contentWords.push(word);
                     if (word in bagOfWords){
                         bagOfWords[word]++;
@@ -72,7 +72,7 @@ class App extends Component {
             }
             temp3.push(contentWords.join(' '));
             totalNumberOfWords += contentWords.length;
-            if (sentence!="")
+            if (sentence!=="")
                 sentenceList.push({sentence:sentence, contentWords:contentWords, sentenceWeight:0, selected:false, documentIndex:k, sentenceIndex:i});
         }
         lowercase.push(temp);
@@ -140,14 +140,14 @@ class App extends Component {
         let found=false;
         let index = 0;
         do {
-            if (sentenceObject[index] && (sentenceObject[index].sentence.toLowerCase().indexOf(normalFormWords[wordArray[0][0]])!=-1 || sentenceObject[index].sentence.toLowerCase().indexOf(wordArray[0][0])!=-1) && sentenceObject[index].selected==false){
+            if (sentenceObject[index] && (sentenceObject[index].sentence.toLowerCase().indexOf(normalFormWords[wordArray[0][0]])!==-1 || sentenceObject[index].sentence.toLowerCase().indexOf(wordArray[0][0])!==-1) && sentenceObject[index].selected===false){
                 found = true;
             } else {
                 index++;
                 if (index>=sentenceObject.length)
                     break;//fails
             }
-        } while (found==false);
+        } while (found===false);
 
         if (found){
             selectedSentences.push(sentenceObject[index].sentence);
@@ -161,7 +161,7 @@ class App extends Component {
                 wordsProbability[usedWords[i]] = wordsProbability[usedWords[i]]*wordsProbability[usedWords[i]];
             }
         } else {
-            if (wordArray[0][1]==0)
+            if (wordArray[0][1]===0)
                 break;
             wordsProbability[wordArray[0][0]]=0;
         }
