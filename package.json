@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "natural": "^0.6.1",
+    "promise-file-reader": "^1.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-dropzone": "^6.2.4",
+    "react-flickity-component": "^3.1.0",
+    "react-scripts": "2.0.5",
+    "sentence-tokenizer": "^1.0.0",
+    "stemmer": "^1.0.3",
+    "stopword": "^0.1.13"
   },
   "scripts": {
     "start": "react-scripts start",
